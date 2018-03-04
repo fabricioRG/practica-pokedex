@@ -49,7 +49,6 @@ public class pokedex {
         
         //String nombre, int HP, int nivel, String habilidad, String especie, String tipo, double peso, double altura, String habitat
         PokemonAgua Squirtle = new PokemonAgua("sldkfj", 1,2,"sjkdfh","kdjh","kjdgh", 1, 2, "sh");
-        Squirtle.StatusPokemon();
     }
 
 }

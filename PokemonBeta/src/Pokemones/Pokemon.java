@@ -37,9 +37,13 @@ public class Pokemon {
     }
     
     public void InicioPokemon(){
+        
         EleccionPokemonInicio();
         if (aleatorio == 1) {
-            
+            PokemonAgua Squirtle = new PokemonAgua("sldkfj", 1,2,"sjkdfh","kdjh","kjdgh", 1, 2, "sh");
+            Squirtle.StatusPokemon();
+        } else {
+            System.out.println("No ha pasado nada :/");
         }
     }
     
