@@ -48,7 +48,7 @@ public class pokedex {
                 + "		       ~M!M");
         
         //String nombre, int HP, int nivel, String habilidad, String especie, String tipo, double peso, double altura, String habitat
-        PokemonAgua mecanicoJuan = new PokemonAgua("sldkfj", 1,2,"sjkdfh","kdjh","kjdgh", 1, 2, "sdfh");
+        PokemonAgua mecanicoJuan = new PokemonAgua("sldkfj", 1,2,"sjkdfh","kdjh","kjdgh", 1, 2, "sh");
     }
 
 }
