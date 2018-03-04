@@ -34,9 +34,9 @@ public class pokedex {
                 + "					\"Y888888 				 \n"
                 + "	\n"
                 + "		                                .::.\n"
-                + "		                              .;:**'            AMC\n"
-                + "		                              `                  0\n"
-                + "		  .:XHHHHk.              db.   .;;.     dH  MX   0\n"
+                + "		                              .;:**'               \n"
+                + "		                              `                   \n"
+                + "		  .:XHHHHk.              db.   .;;.     dH  MX    \n"
                 + "		oMMMMMMMMMMM       ~MM  dMMP :MMMMMR   MMM  MR      ~MRMN\n"
                 + "		QMMMMMb  \"MMX       MMMMMMP !MX' :M~   MMM MMM  .oo. XMMM 'MMM\n"
                 + "		  `MMMM.  )M> :X!Hk. MMMM   XMM.o\"  .  MMMMMMM X?XMMM MMM>!MMP\n"
@@ -48,7 +48,8 @@ public class pokedex {
                 + "		       ~M!M");
         
         //String nombre, int HP, int nivel, String habilidad, String especie, String tipo, double peso, double altura, String habitat
-        PokemonAgua mecanicoJuan = new PokemonAgua("sldkfj", 1,2,"sjkdfh","kdjh","kjdgh", 1, 2, "sh");
+        PokemonAgua Squirtle = new PokemonAgua("sldkfj", 1,2,"sjkdfh","kdjh","kjdgh", 1, 2, "sh");
+        Squirtle.StatusPokemon();
     }
 
 }
