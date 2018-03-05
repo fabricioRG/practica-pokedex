@@ -5,17 +5,25 @@ package Pokedex;
  * @author fabricio
  */
 
-import Pokemones.PokemonAgua;
+import Alimentacion.Alimentacion;
+import Pokemones.Pokemon;
 import java.util.Scanner;
 
 public class pokedex {
 
+    //Metodo principal que inicia las acciones del juego
     public static void main(String[] args) {
+        Pokemon miPokemon = new Pokemon();
+        Alimentacion comida = new Alimentacion();
         Scanner scanner = new Scanner(System.in);
         String NombreJugador;
 
-        System.out.println("Ingrese su nombre como entrenador pokemon");
-        NombreJugador = scanner.nextLine();
+        //Nombre que utilizara el jugador durante toda la ejecucion del juego
+        
+        /*System.out.println("Ingrese su nombre como entrenador pokemon");
+        NombreJugador = scanner.nextLine();*/
+        
+        //Impresion que indica el nombre del juego y da bienvenida al usuario
         System.out.println("\n");
         System.out.println("	888888b.   d8b                                              d8b      888          \n"
                 + "	888  \"88b  Y8P                                              Y8P      888          \n"
@@ -45,10 +53,14 @@ public class pokedex {
                 + "		     ?MMM>  YMMMMMM! MM   `?MMRb.    `\"\"\"   !L\"MMMMM XM IMMM\n"
                 + "		      MMMX   \"MMMM\"  MM       ~%:           !Mh.\"\"\" dMI IMMP\n"
                 + "		      'MMM.                                             IMX\n"
-                + "		       ~M!M");
+                + "		       ~M!M\n");
         
         //String nombre, int HP, int nivel, String habilidad, String especie, String tipo, double peso, double altura, String habitat
-        PokemonAgua Squirtle = new PokemonAgua("sldkfj", 1,2,"sjkdfh","kdjh","kjdgh", 1, 2, "sh");
+        miPokemon.InicioPokemon();
+        comida.DarComida();
+        
+        
+        
     }
 
 }
