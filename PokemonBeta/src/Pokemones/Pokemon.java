@@ -47,6 +47,14 @@ public class Pokemon {
         pokemonRandom = 1 + aleatorio.nextInt(5);
         this.pokemonRandom =  pokemonRandom;
     }
+    public void VidaPokemon() {
+        HP = (nivel + 1) * 10;
+    }
+    public void MasVida(){
+        if (nivel >=1){
+            VidaPokemon();
+        }
+    }
 
     //Constructor de la clase
     public Pokemon() {
@@ -58,22 +66,27 @@ public class Pokemon {
         EleccionPokemonInicio();
         if (pokemonRandom == 1) {
             PokemonAgua squirtle = new PokemonAgua("Squirtle", 10, 0, "torrente", "tortuguita", "agua", 9, 0.5, "agua dulce");
+            squirtle.MasVida();
             squirtle.StatusPokemon();
             squirtle.ImagenAgua();
         } else if (pokemonRandom == 2){
-            PokemonElectrico pikachu =  new PokemonElectrico("Pikachu", 15, 0, "electricidad", "raton", "electrico", 6, 0.4, "bosque" );
+            PokemonElectrico pikachu =  new PokemonElectrico("Pikachu", 10, 0, "electricidad", "raton", "electrico", 6, 0.4, "bosque" );
+            pikachu.MasVida();
             pikachu.StatusPokemon();
             pikachu.ImagenElectrico();
         } else if (pokemonRandom == 3) {
             PokemonFantasma gastly = new PokemonFantasma("Gastly", 10, 0, "levitacion", "gas", "fantasma", 0.1, 1.3, "caverna");
+            gastly.MasVida();
             gastly.StatusPokemon();
             gastly.ImagenFantasma();
         } else if (pokemonRandom == 4) {
-            PokemonFuego charmander = new PokemonFuego("Charmander", 12, 0, "mar llamas", "lagartija", "fuego", 8.5, 0.6, "montaña");
+            PokemonFuego charmander = new PokemonFuego("Charmander", 10, 0, "mar llamas", "lagartija", "fuego", 8.5, 0.6, "montaña");
+            charmander.MasVida();
             charmander.StatusPokemon();
             charmander.ImagenFuego();
         } else {
             PokemonPlanta bulbasaur = new PokemonPlanta("Bulbasaur", 10, 0, "espesura", "semilla", "planta", 6.9, 0.7, "pradera");
+            bulbasaur.MasVida();
             bulbasaur.StatusPokemon();
             bulbasaur.ImagenPlanta();
         }

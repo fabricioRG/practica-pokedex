@@ -21,7 +21,7 @@ public class Alimentacion {
         this.comidaRandom = comidaRandom;
     }
     public void ImprimirComida () {
-        System.out.println("La comida seleccionada es " + comida);
+        System.out.println("La comida seleccionada es " + comida + "\n");
     }
     public void DarComida () {
         ComidaRandom();
