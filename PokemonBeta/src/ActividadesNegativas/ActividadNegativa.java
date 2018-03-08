@@ -1,9 +1,8 @@
 
 package ActividadesNegativas;
 import java.util.Random;
-import ActividadesNegativas.Actividad1;
-import ActividadesNegativas.Actividad2;
-import ActividadesNegativas.Actividad3;
+//import Pokemones.Pokemon;
+
 
 /**
  *
@@ -12,6 +11,7 @@ import ActividadesNegativas.Actividad3;
 public class ActividadNegativa {
     int actividadAleatoria;
     String nombre;
+    //Pokemon pokemon = new Pokemon();
     
     public ActividadNegativa(String nombre){
         this.nombre = nombre;
@@ -29,14 +29,15 @@ public class ActividadNegativa {
     }
     public void SeleccionActividad(){
         if (actividadAleatoria == 1){
-            Actividad1 actividad1 = new Actividad1("Ver Television");
+            ActividadNegativa actividad1 = new Actividad1("Ver Television");
             actividad1.ImprimirSeleccion();
         } else if (actividadAleatoria == 2){
-            Actividad2 actividad2 = new Actividad2("Estudiar");
+            ActividadNegativa actividad2 = new Actividad2("Estudiar");
             actividad2.ImprimirSeleccion();
         } else {
-            Actividad3 actividad3 = new Actividad3("Esconderse");
+            ActividadNegativa actividad3 = new Actividad3("Esconderse");
             actividad3.ImprimirSeleccion();
         }
+        //pokemon.PerderVida();
     }
 }

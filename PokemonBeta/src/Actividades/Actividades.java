@@ -3,12 +3,12 @@ package Actividades;
 import java.util.Random;
 import ActividadesNegativas.ActividadNegativa;
 import ActividadesPositivas.ActividadPositiva;
-
+  
 public class Actividades {
     
     int seleccionRandom;
-    ActividadPositiva actividad1 = new ActividadPositiva();
-    ActividadNegativa actividad2 = new ActividadNegativa();
+    ActividadPositiva primeraActividad = new ActividadPositiva();
+    ActividadNegativa segundaActividad = new ActividadNegativa();
     
     public Actividades() {
     }
@@ -21,9 +21,9 @@ public class Actividades {
     public void SeleccionActividad(){
         SeleccionRandom();
         if (seleccionRandom == 1) {
-            actividad1.SeleccionPositiva();
+            primeraActividad.SeleccionPositiva();
         } else {
-            actividad2.SeleccionActividad();
+            segundaActividad.SeleccionActividad();
         }
     }
     
