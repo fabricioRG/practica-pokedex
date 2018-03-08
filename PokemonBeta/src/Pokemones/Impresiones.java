@@ -60,6 +60,43 @@ public class Impresiones {
 "                       ...hs/--:sd+                         \n" +
 "                          -oyhhyo-`          \n");
     }
+    public void actividadTres(){
+        System.out.println("                                                           `-+syddmmmmmdhyo/.`            \n" +
+"                                                        -odNho/-.`    ``.:+sdmh+.         \n" +
+"                                                     `+mmo-`                 `:sNh/`      \n" +
+"                                                   `oNh:                        `/dm/     \n" +
+"                                                  :md:                            `+Nh.   \n" +
+"                                                 +Ms`     ./syyyyyyyyyyyyyyyyyy/    .dN-  \n" +
+"                                                +Mo     `sMMMMMMMMMMMMMMMMMMMMMs     `hN- \n" +
+"                                               -My     `dmy+++mMMs++++hMMh+++++:      `mm`\n" +
+"                                               yN.     os`   `NMM.    yMM/             /M+\n" +
+"                                              `Nh            :MMm`    mMM-             `Nh\n" +
+"                                              .Ms            oMMh    .MMM.              mm\n" +
+"                                              `My            hMM+    :MMN`             `Nd\n" +
+"                                               dN`          `NMM-    /MMN`             -Mo\n" +
+"                                               /M+         `sMMm`    /MMM-    -y      `hN.\n" +
+"         ./shdmmNmmdyo/.                       `NN`       -dMMMs     -MMMd:``:dy      oM+ \n" +
+"      :smMmyo/:---:/ohNMmo.                   .mm-       +MMMMM-      yMMMMMMMm.     oMo  \n" +
+"    /dMd+.             -omMh-                :Nh`        /MMMNo       `oNMMMmo`    .hN/   \n" +
+"  .hMd:                  `+NMs`       `.:`  oMs`  `.:o/`  `::`          `.-.     .oNh.    \n" +
+" .mMs`                     `hMh-:+sydNMy. `yMs/oydmdsodms-                    `:yNy-      \n" +
+"`dMs                 odh-   `dMNyo+hMh-  .dMmhs+:`     -ommy/-`           `-+hNh+.        \n" +
+"+Mm`                 +hy.    -MM-+md:    :-`              ./shmmdyysssyhdmdyo:`           \n" +
+"yMs  `.:/+so                 `mMNm/`                           `.--:::--``                \n" +
+"yMs dNhys+/-                 `dMNmy+-`                                                    \n" +
+"+Mm`yM.                      .MM-`:ohNho:`                                                \n" +
+"`mMo.Nd`      /h-           `hMNosyhdmNNmds:`                                             \n" +
+" -NMo-mm/     oM-          `hMd+/:-..``                                                   \n" +
+"  .dMd:+mmo:` oM-         /mMy`                                                           \n" +
+"   `+mMh/:oydmNM:      .omMd:                                                             \n" +
+"     `:yNMds+:--.--/oymMms-                                                               \n" +
+"        `-+smMNNMMNdhs/.                                                                  \n" +
+"            +M:-Ms                                                                        \n" +
+"      `hyo/:oM:-My-/oyh`                                                                  \n" +
+"      .+hNMMMy.`yNMMMdo-                                                                  \n" +
+"      +somMy.    .sNmsso                                                                  \n" +
+"       `hy.        .sd.   \n");
+    }
     
     public void Bienvenida(){
         System.out.println("\n");

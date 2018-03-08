@@ -11,6 +11,7 @@ import Pokemones.Impresiones;
  */
 public class Actividad2 {
     int aleatorio, seleccion;
+    
     public void Aleatorio(){
         Random random = new Random();
         aleatorio = 1 + random.nextInt(10);
@@ -20,7 +21,7 @@ public class Actividad2 {
     public Actividad2() {
     }
     
-    public void Juego(){
+    public void Actividad(){
         Aleatorio();
         Impresiones();
         InicioJuego();

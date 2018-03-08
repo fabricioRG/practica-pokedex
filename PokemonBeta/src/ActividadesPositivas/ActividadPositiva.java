@@ -3,8 +3,9 @@ package ActividadesPositivas;
 import java.util.Random;
 import ActividadesPositivas.Actividad1;
 import ActividadesPositivas.Actividad2;
+import ActividadesPositivas.Actividad3;
 //import Pokemones.Pokemon;
-//import ActividadesPositivas.Actividad3;
+
 /**
  *
  * @author fabricio
@@ -14,7 +15,7 @@ public class ActividadPositiva  {
 //    Pokemon pokemon = new Pokemon();
     Actividad1 actividadUno = new Actividad1();
     Actividad2 actividadDos = new Actividad2();
-    //Actividad3 actividad3 = new Actividad3();
+    Actividad3 actividadTres = new Actividad3();
     
     public ActividadPositiva() {
     }
@@ -26,11 +27,11 @@ public class ActividadPositiva  {
     public void SeleccionPositiva(){
         SeleccionRandom();
         if (positivoRandom == 1) {
-            actividadUno.Juego();
+            actividadUno.Actividad();
         } else if (positivoRandom == 2) {
-            actividadDos.Juego();
+            actividadDos.Actividad();
         } else {
-            System.out.println("En proceso 3");
+            actividadTres.Actividad();
         }
         //pokemon.GanarVida();
     }
