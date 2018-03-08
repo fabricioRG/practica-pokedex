@@ -28,6 +28,7 @@ public class ActividadNegativa {
         this.actividadAleatoria = actividadAleatoria;
     }
     public void SeleccionActividad(){
+        SeleccionRandom();
         if (actividadAleatoria == 1){
             ActividadNegativa actividad1 = new Actividad1("Ver Television");
             actividad1.ImprimirSeleccion();

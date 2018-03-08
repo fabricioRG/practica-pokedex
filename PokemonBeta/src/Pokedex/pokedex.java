@@ -32,13 +32,13 @@ public class pokedex {
         //Inicia la seleccion del primer pokemon a utilizar
         miPokemon.InicioPokemon();
         
+        //Funcion encargada de llamar metodos de otra clase y terminar el proceso cuando "salir" sea falso
         while (salir ) {
             miPokemon.SeleccionPokemon();
             miPokemon.PokemonElegido();
-             
         }
     }
-
+    //Metodo encargado de 
     public void MenuPrincipal() {
         
         int selection;
@@ -56,10 +56,10 @@ public class pokedex {
             selection = select.nextInt();
             switch (selection) {
                 case 1:
-                    comida.DarComida();
+                    miPokemon.SeleccionComida();
                     break;
                 case 2:
-                    actividad.SeleccionActividad();
+                    miPokemon.SeleccionActividad();
                     break;
                 case 3:
                     break;
@@ -74,4 +74,5 @@ public class pokedex {
             }
         }
     }
+    
 }

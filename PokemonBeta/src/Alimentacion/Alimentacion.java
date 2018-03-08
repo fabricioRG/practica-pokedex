@@ -4,6 +4,7 @@ package Alimentacion;
 import java.util.Random;
 import Alimentacion.ComidaBuena;
 import Alimentacion.ComidaMala;
+import Pokemones.Pokemon;
 
 public class Alimentacion {
 

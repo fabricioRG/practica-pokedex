@@ -6,11 +6,15 @@ import java.util.Scanner;
 import Actividades.Actividades;
 import Alimentacion.Alimentacion;
 import Pokedex.pokedex;
+import ActividadesNegativas.ActividadNegativa;
+import ActividadesPositivas.ActividadPositiva;
+import Alimentacion.ComidaBuena;
+import Alimentacion.ComidaMala;
 
 public class Pokemon {
 
     //Variables de la clase
-    int HP, nivel, experiencia, numeroRandom, seleccion;
+    int HP, nivel, experiencia, numeroRandom, seleccion, seleccionRandom;
     String habilidad, especie, tipo, habitat, nombre;
     double peso, altura;
     
@@ -19,6 +23,10 @@ public class Pokemon {
     Impresiones impresion = new Impresiones();
     Alimentacion alimento = new Alimentacion();
     pokedex pokemonfun = new pokedex();
+    ActividadPositiva primeraActividad = new ActividadPositiva();
+    ActividadNegativa segundaActividad = new ActividadNegativa();
+    ComidaMala primeraComida = new ComidaMala();
+    ComidaBuena segundaComida = new ComidaBuena();
     
     Pokemon squirtle;
     Pokemon pikachu;
@@ -67,23 +75,35 @@ public class Pokemon {
             VidaPokemon();
         }
     }
+    //Metodo encargado de aumentar puntos de vida al pokemon
     public void GanarVida(){
+        int vidaParcial;
         NumeroRandom();
-        HP = HP + numeroRandom;
-        if (HP > VidaParcial()){
-            HP = VidaParcial();
-            System.out.println("La vida de " + nombre + "ha sido completada o llegado a su maximo");
-        } else if (HP < VidaParcial()){
-            System.out.println("Has ganado " + numeroRandom + " pts de vida");
+        if (this.HP >= VidaParcial()){
+            this.HP = VidaParcial();
+            System.out.println("\n" + "La vida de " + nombre + " ha llegado a su maximo");
+        } else if (this.HP < VidaParcial()){
+            vidaParcial = HP + numeroRandom;
+            if (vidaParcial < VidaParcial()){
+                this.HP = HP + numeroRandom;
+                System.out.println("\n" + "Has ganado " + numeroRandom + " pts de vida");
+            } else if (vidaParcial == VidaParcial()){
+                this.HP = HP + numeroRandom;
+                System.out.println("\n" + "Has ganado " + numeroRandom + " pts de vida y has completado la vida de tu pokemon");
+            } else if (vidaParcial > VidaParcial()){
+                this.HP = VidaParcial();
+                System.out.println("\n" + "La vida de " + nombre + " ha sido completada y ha llegado a su maximo");
+            }
         }
     }
+    //Metodo encargado de reducir puntos de vida al pokemon 
     public void PerderVida(){
         NumeroRandom();
-        HP = HP - numeroRandom;
-        if (HP <= 0){
-            HP = 0;
+        if (this.HP <= 0){
+            this.HP = 0;
             System.out.println("Tu pokemon ha muerto");
-        } else if(HP > 0){
+        } else if(this.HP > 0){
+            this.HP = HP - numeroRandom;
             System.out.println("Has perdido " + numeroRandom + " pts de vida");
         }
     }
@@ -91,7 +111,33 @@ public class Pokemon {
     //Constructor de la clase
     public Pokemon() {
     }
-
+    //Metodo encargado de generar un numero aleatorio entre 1 y 2
+    public void SeleccionRandom(){
+        Random random = new Random();
+        seleccionRandom = 1 + random.nextInt(2);
+        this.seleccionRandom = seleccionRandom;
+    }
+    //Metodo encargado de seleccionar la actividad a realizar aleatoriamente 
+    public void SeleccionActividad(){
+        SeleccionRandom();
+        if (seleccionRandom == 1) {
+            primeraActividad.SeleccionPositiva();
+            seleccionPokemon().GanarVida();
+        } else {
+            segundaActividad.SeleccionActividad();
+            seleccionPokemon().PerderVida();
+        }
+    }
+    public void SeleccionComida(){
+        SeleccionRandom();
+        if (seleccionRandom == 1) {
+            primeraComida.SeleccionComida();
+            seleccionPokemon().GanarVida();
+        } else {
+            segundaComida.SeleccionComida();
+            seleccionPokemon().PerderVida();
+        }
+    }
     //Metodo encargado de inicializar los pokemones a utilizar durante todo el juego
     public void InicioPokemon() {
         System.out.println("Bienvendo, dispones de los siguientes pokemones\n");
@@ -121,13 +167,34 @@ public class Pokemon {
         bulbasaur.StatusPokemon();
         impresion.bulbasaur();
     }
-
+    //Metodo encargado de mostrar en pantalla los pokemones disponibles, y guardar la opcion elegida
     public void SeleccionPokemon() {
         Scanner select = new Scanner(System.in);
         System.out.println("¿Que pokemon deseas utilizar en este momento?");
         System.out.println("1. Squirtle / 2. Pikachu / 3. Gastly / 4. Charmander / 5. Bulbasaur");
         seleccion = select.nextInt();
     }
+    //Metodo encargado de seleccionar un pokemon, para despues dirigirse al menu de opciones
+    public void PokemonElegido(){
+        if (seleccion == 1) {
+            System.out.println(seleccionado + this.squirtle.nombre);
+            this.squirtle.pokemonfun.MenuPrincipal();
+        } else if (seleccion == 2) {
+            System.out.println(seleccionado + this.pikachu.nombre);
+            this.pikachu.pokemonfun.MenuPrincipal();
+        } else if (seleccion == 3) {
+            System.out.println(seleccionado + this.gastly.nombre);
+            this.gastly.pokemonfun.MenuPrincipal();
+        } else if (seleccion == 4) {
+            System.out.println(seleccionado + this.charmander.nombre);
+            this.charmander.pokemonfun.MenuPrincipal();
+        } else if (seleccion == 5) {
+            System.out.println(seleccionado + this.bulbasaur.nombre);
+            this.bulbasaur.pokemonfun.MenuPrincipal();
+        }
+        System.out.println("\n");
+    }
+    //Metodo encargado de mostrar la imagen de cada pokemon, asi como el estado del pokemon y verificar la vida respecto al nivel
     public void ImprimirPokemon(){
         if (seleccion == 1) {
             impresion.Squirtle();
@@ -152,23 +219,23 @@ public class Pokemon {
         }
     }
     
-    public void PokemonElegido(){
-        if (seleccion == 1) {
-            System.out.println(seleccionado + this.squirtle.nombre);
-            this.squirtle.pokemonfun.MenuPrincipal();
-        } else if (seleccion == 2) {
-            System.out.println(seleccionado + this.pikachu.nombre);
-            this.pikachu.pokemonfun.MenuPrincipal();
-        } else if (seleccion == 3) {
-            System.out.println(seleccionado + this.gastly.nombre);
-            this.gastly.pokemonfun.MenuPrincipal();
-        } else if (seleccion == 4) {
-            System.out.println(seleccionado + this.charmander.nombre);
-            this.charmander.pokemonfun.MenuPrincipal();
-        } else if (seleccion == 5) {
-            System.out.println(seleccionado + this.bulbasaur.nombre);
-            this.bulbasaur.pokemonfun.MenuPrincipal();
+    //Metodo que da un numero entero
+    public int seleccion(){
+        return seleccion;
+    }
+    //Metodo encargado de dar un pokemon dependiendo de la seleccion
+    Pokemon seleccionPokemon(){
+        if (seleccion == 1){
+            return squirtle;
+        } else if (seleccion == 2){
+            return pikachu;
+        } else if (seleccion == 3){
+            return gastly;
+        } else if (seleccion == 4){
+            return charmander;
+        } else if (seleccion == 5){
+            return bulbasaur;
         }
-        System.out.println("\n");
+        return null;
     }
 }
