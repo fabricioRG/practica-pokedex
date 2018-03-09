@@ -3,8 +3,6 @@ package Pokemones;
 //Importando las clases a utilizar
 import java.util.Random;
 import java.util.Scanner;
-import Actividades.Actividades;
-import Alimentacion.Alimentacion;
 import Pokedex.pokedex;
 import ActividadesNegativas.ActividadNegativa;
 import ActividadesPositivas.ActividadPositiva;
@@ -21,12 +19,11 @@ public class Pokemon {
     String seleccionado = "Has seleccionado a: ";
 
     Impresiones impresion = new Impresiones();
-    Alimentacion alimento = new Alimentacion();
     pokedex pokemonfun = new pokedex();
     ActividadPositiva primeraActividad = new ActividadPositiva();
     ActividadNegativa segundaActividad = new ActividadNegativa();
-    ComidaMala primeraComida = new ComidaMala();
-    ComidaBuena segundaComida = new ComidaBuena();
+    ComidaMala segundaComida = new ComidaMala();
+    ComidaBuena primerComida = new ComidaBuena();
     
     Pokemon squirtle;
     Pokemon pikachu;
@@ -101,10 +98,10 @@ public class Pokemon {
         NumeroRandom();
         if (this.HP <= 0){
             this.HP = 0;
-            System.out.println("Tu pokemon ha muerto");
+            System.out.println("Tu pokemon ha muerto\n");
         } else if(this.HP > 0){
             this.HP = HP - numeroRandom;
-            System.out.println("Has perdido " + numeroRandom + " pts de vida");
+            System.out.println("Has perdido " + numeroRandom + " pts de vida\n");
         }
     }
 
@@ -131,7 +128,7 @@ public class Pokemon {
     public void SeleccionComida(){
         SeleccionRandom();
         if (seleccionRandom == 1) {
-            primeraComida.SeleccionComida();
+            primerComida.SeleccionComida();
             seleccionPokemon().GanarVida();
         } else {
             segundaComida.SeleccionComida();

@@ -2,6 +2,7 @@
 package Alimentacion;
 
 import java.util.Random;
+import Pokemones.Impresiones;
 
 /**
  *
@@ -25,18 +26,22 @@ public class ComidaMala {
         this.actividadAleatoria = actividadAleatoria;
     }
      public void ImprimirComida () {
-        System.out.println("La comida seleccionada es " + comida + "\n");
+        System.out.println("La comida seleccionada fue " + comida + "\n");
     }
     public void SeleccionComida(){
+        Impresiones imprimir = new Impresiones();
         SeleccionRandom();
         if (actividadAleatoria == 1){
-            ComidaMala comida1 = new ComidaMala("Bayas");
+            ComidaMala comida1 = new ComidaMala("Hamburguesa");
+            imprimir.comidaCuatro();
             comida1.ImprimirComida();
         } else if (actividadAleatoria == 2){
-            ComidaMala comida2 = new ComidaMala("Pokecubos");
+            ComidaMala comida2 = new ComidaMala("Hot Dog");
+            imprimir.comidaCinco();
             comida2.ImprimirComida();
         } else {
-            ComidaMala comida3 = new ComidaMala("Pokochos");
+            ComidaMala comida3 = new ComidaMala("Helado");
+            imprimir.comidaSeis();
             comida3.ImprimirComida();
         }
     }

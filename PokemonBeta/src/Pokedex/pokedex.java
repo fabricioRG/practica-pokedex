@@ -4,17 +4,13 @@ package Pokedex;
  *
  * @author fabricio
  */
-import Alimentacion.Alimentacion;
 import Pokemones.Pokemon;
-import Actividades.Actividades;
 import Pokemones.Impresiones;
 import java.util.Scanner;
 
 public class pokedex {
     
     static boolean salir = true;
-    Alimentacion comida = new Alimentacion();
-    Actividades actividad = new Actividades();
     static Pokemon miPokemon = new Pokemon();
 
     //Metodo principal que inicia las acciones del juego
@@ -52,7 +48,7 @@ public class pokedex {
                     + "3. Batalla\n"
                     + "4. Reportes\n"
                     + "5. Seleccionar otro Pokemon\n"
-                    + "6. Salir\n");
+                    + "6. Salir");
             selection = select.nextInt();
             switch (selection) {
                 case 1:
