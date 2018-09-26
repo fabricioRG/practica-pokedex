@@ -8,6 +8,8 @@ import ActividadesNegativas.ActividadNegativa;
 import ActividadesPositivas.ActividadPositiva;
 import Alimentacion.ComidaBuena;
 import Alimentacion.ComidaMala;
+import Batalla.Batalla;
+import Pokemones.Impresion;
 
 public class Pokemon {
 
@@ -17,15 +19,18 @@ public class Pokemon {
     double peso, altura;
     
     String seleccionado = "Has seleccionado a: ";
+    String ingresarImagen = "Ingrese la imagen para su pokemon ";
 
     Impresiones impresion = new Impresiones();
+    Impresion impresiones = new Impresion();
     pokedex pokemonfun = new pokedex();
     ActividadPositiva primeraActividad = new ActividadPositiva();
     ActividadNegativa segundaActividad = new ActividadNegativa();
     ComidaMala segundaComida = new ComidaMala();
     ComidaBuena primerComida = new ComidaBuena();
+    Batalla batalla = new Batalla();
     
-    Pokemon squirtle;
+    Pokemon squirtle = new Pokemon();
     Pokemon pikachu;
     Pokemon gastly;
     Pokemon charmander;
@@ -104,6 +109,15 @@ public class Pokemon {
             System.out.println("Has perdido " + numeroRandom + " pts de vida\n");
         }
     }
+    public void BatallaUno(){
+        seleccionPokemon().vidaBatalla();
+    }
+    public void vidaBatalla(){
+        System.out.println("ataque " + batalla.ataqueDaño());
+        int ataqueDaño;
+        ataqueDaño = batalla.ataqueDaño();
+        this.HP = HP - ataqueDaño;
+    }
 
     //Constructor de la clase
     public Pokemon() {
@@ -137,31 +151,37 @@ public class Pokemon {
     }
     //Metodo encargado de inicializar los pokemones a utilizar durante todo el juego
     public void InicioPokemon() {
+        String[] obtenerImagen = new String[5];
+        Scanner scan = new Scanner(System.in);
         System.out.println("Bienvendo, dispones de los siguientes pokemones\n");
-
+        
         Pokemon squirtle = new Pokemon("Squirtle", 100, 0, 0, "torrente", "tortuguita", "agua", 9, 0.5, "agua dulce");
+        this.squirtle.setHP(0);
         this.squirtle = squirtle;
-        squirtle.StatusPokemon();
+        this.squirtle.StatusPokemon();
+        //System.out.println(ingresarImagen + this.squirtle.nombre );
+        //obtenerImagen[0] = scan.nextLine();
+        //impresiones.Squirtle(obtenerImagen[0]);
         impresion.Squirtle();
 
         Pokemon pikachu = new Pokemon("Pikachu", 100, 0, 0, "electricidad", "raton", "electrico", 6, 0.4, "bosque");
         this.pikachu = pikachu;
-        pikachu.StatusPokemon();
+        this.pikachu.StatusPokemon();
         impresion.Pikachu();
 
         Pokemon gastly = new Pokemon("Gastly", 100, 0, 0, "levitacion", "gas", "fantasma", 0.1, 1.3, "caverna");
         this.gastly = gastly;
-        gastly.StatusPokemon();
+        this.gastly.StatusPokemon();
         impresion.Gastly();
 
         Pokemon charmander = new Pokemon("Charmander", 100, 0, 0, "mar llamas", "lagartija", "fuego", 8.5, 0.6, "montaña");
         this.charmander = charmander;
-        charmander.StatusPokemon();
+        this.charmander.StatusPokemon();
         impresion.Charmander();
 
         Pokemon bulbasaur = new Pokemon("Bulbasaur", 100, 0, 0, "espesura", "semilla", "planta", 6.9, 0.7, "pradera");
         this.bulbasaur = bulbasaur;
-        bulbasaur.StatusPokemon();
+        this.bulbasaur.StatusPokemon();
         impresion.bulbasaur();
     }
     //Metodo encargado de mostrar en pantalla los pokemones disponibles, y guardar la opcion elegida
@@ -235,4 +255,14 @@ public class Pokemon {
         }
         return null;
     }
+
+    public int getHP() {
+        return HP;
+    }
+
+    public void setHP(int HP) {
+        this.HP = HP;
+    }
+    
+    
 }

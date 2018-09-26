@@ -7,11 +7,13 @@ package Pokedex;
 import Pokemones.Pokemon;
 import Pokemones.Impresiones;
 import java.util.Scanner;
+import Batalla.Batalla;
 
 public class pokedex {
     
     static boolean salir = true;
     static Pokemon miPokemon = new Pokemon();
+    static Batalla batalla = new Batalla();
 
     //Metodo principal que inicia las acciones del juego
     public static void main(String[] args) {
@@ -58,6 +60,8 @@ public class pokedex {
                     miPokemon.SeleccionActividad();
                     break;
                 case 3:
+                    batalla.impresion();
+                    miPokemon.BatallaUno();
                     break;
                 case 4:
                     break;
